@@ -1,0 +1,7 @@
+<h1>applicants#index<h1>
+
+<ul>
+    <% @applicants.each do |applicant|%>
+        <li> <%= link_to applicant.display_name, applicant_path(applicant.id)%> </li>
+    <% end %>
+</ul>

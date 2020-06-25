@@ -1,0 +1,7 @@
+<h1>employer#index</h1>
+
+<ul>
+    <% @employers.each do |employer|%>
+        <li> <%= link_to employer.display_name, employer_path(employer.id)%> </li>
+    <% end %>
+</ul>
