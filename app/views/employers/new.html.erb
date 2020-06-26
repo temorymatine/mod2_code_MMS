@@ -1,0 +1,23 @@
+<h1>create new employer</h1>
+
+<%= form_for @employer do |f|%>
+    <div>
+        <%= f.label :f_name, "First Name:" %>
+        <%= f.text_field :f_name %>
+    </div>
+    <div>
+        <%= f.label :l_name, "Last Name:" %>
+        <%= f.text_field :l_name %>
+    </div>
+    <div>
+        <%= f.label :company, "Company:" %>
+        <%= f.text_field :company %>
+    </div>
+    <div>
+        <%= f.label :address, "Address:" %>
+        <%= f.text_field :address %>
+    </div>
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>

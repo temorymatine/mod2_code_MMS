@@ -1,0 +1,19 @@
+<h1>create new applicant</h1>
+
+<%= form_for @applicant do |f|%>
+    <div>
+        <%= f.label :f_name, "First Name:" %>
+        <%= f.text_field :f_name %>
+    </div>
+    <div>
+        <%= f.label :l_name, "Last Name:" %>
+        <%= f.text_field :l_name %>
+    </div>
+    <div>
+        <%= f.label :email, "Email:" %>
+        <%= f.text_field :email %>
+    </div>
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>

@@ -3,3 +3,14 @@
 <h2>Name: <%=@employer.display_name%> </h2>
 <h2>Company: <%=@employer.company%> </h2>
 <h2>Address: <%=@employer.address%> </h2>
+<h2>Applicants:</h2>
+
+<ol>
+    <% if @employer.applicants.length != 0 %>
+        <% @employer.applicants.each do |applicant| %>
+            <li><%= applicant.display_name %></li>
+        <% end %>
+    <% else %>
+        <h3>This employer has no applicants.</h3>
+    <% end %>
+</ol>

@@ -1,1 +1,17 @@
 <h1>interview#index</h1>
+
+<table style="border-spacing: 10px" > 
+    <tr>
+        <th>Applicants</th>
+        <th>Employers</th>
+        <th>Interview Date</th>
+    </tr>
+
+    <% @interviews.each do |interview| %>
+        <tr>
+            <td><%= link_to interview.applicant.display_name, applicant_path(interview.applicant_id) %></td>
+            <td><%= link_to interview.employer.display_name, employer_path(interview.employer_id) %></td>
+            <td><%= link_to interview.date_of_interview, interview_path(interview.id) %></td>
+        </tr>
+    <% end %>
+</table>

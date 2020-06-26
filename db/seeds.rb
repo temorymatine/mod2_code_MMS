@@ -22,26 +22,7 @@ end
 employer_ids = Employer.pluck(:id)
 applicant_ids = Applicant.pluck(:id)
 
-dates = ["2050-06-10 10:00:00", "2050-06-10 12:00:00", "2050-06-10 14:00:00",
-    "2050-06-10 16:00:00", "2050-06-10 18:00:00", "2050-06-10 20:00:00",
-    "2050-06-10 22:00:00", "2050-06-10 24:00:00", "2050-06-10 8:00:00", "2050-06-10 6:00:00", "2050-06-10 7:00:00"]
-
-count = 0
-
-
-10.times do
+50.times do
     Interview.create(applicant_id: applicant_ids.sample, employer_id: employer_ids.sample,
-    date_of_interview: dates[count])
-    count += 1
+    date_of_interview: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now))
 end
-10.times do
-    Interview.create(applicant_id: applicant_ids.sample, employer_id: employer_ids.sample,
-    date_of_interview: dates[count])
-    count -= 1
-end
-
-
-
-    
-
-
